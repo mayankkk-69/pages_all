@@ -1,0 +1,15 @@
+
+    
+    // Fetch HR Corner data from backend
+    async function fetchHRData() {
+        try {
+            const res = await fetch('api/get_hr_corner.php');
+            const data = await res.json();
+            if (data.success) {
+                // Keep references updated
+                mandatoryPolicies.length = 0; 
+                data.policies.forEach(p => mandatoryPolicies.push(p));
+
+                if (window.setHRCornerPolicies) {
+                    window.setHRCornerPolicies(data.policies.map((p, i) => {
+                        const showText = p.short_desc ? p.short_d
