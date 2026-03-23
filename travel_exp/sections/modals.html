@@ -1,0 +1,181 @@
+<!-- ═══════════════════════════════════════════
+     VIEW MODAL
+════════════════════════════════════════════ -->
+<div class="modal-overlay" id="view-modal">
+    <div class="modal-box" id="view-modal-container" style="max-width: 800px; padding: 0; background: #f1f5f9; overflow: hidden; border-radius: 12px;">
+        <div id="view-modal-dynamic-content"></div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     EDIT MODAL
+════════════════════════════════════════════ -->
+<div class="modal-overlay" id="edit-modal">
+    <div class="modal-box" id="edit-modal-container" style="max-width: 800px; padding: 0; background: #f1f5f9; overflow: hidden; border-radius: 12px;">
+        <div id="edit-modal-dynamic-content"></div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     DELETE CONFIRM MODAL
+════════════════════════════════════════════ -->
+<div class="modal-overlay" id="delete-modal">
+    <div class="modal-box" style="max-width:420px;">
+        <div class="modal-header">
+            <h3><i class="fa-regular fa-trash-can" style="color:var(--clr-red)"></i> Confirm Delete</h3>
+            <button class="modal-close" id="delete-modal-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="delete-confirm-text">
+                <div class="delete-icon-wrap"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h4>Delete this expense?</h4>
+                <p id="delete-modal-msg">This action cannot be undone. The expense record will be permanently removed.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-ghost" id="delete-modal-cancel">Cancel</button>
+            <button class="btn btn-danger" id="delete-modal-confirm"><i class="fa-solid fa-trash"></i> Yes, Delete</button>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ADD TRAVEL EXPENSE MODAL
+════════════════════════════════════════════ -->
+<div class="modal-overlay" id="add-expense-modal">
+    <div class="modal-box add-expense-box">
+
+        <!-- Premium Gradient Header (like image 2 style) -->
+        <div class="add-modal-header">
+            <div class="add-modal-header-inner">
+                <div class="add-modal-icon-wrap">
+                    <i class="fa-solid fa-plane-departure"></i>
+                </div>
+                <div>
+                    <h2>Add Travel Expense</h2>
+                    <p>Fill in the trip details to submit your claim</p>
+                </div>
+            </div>
+            <button class="add-modal-close" id="add-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Scrollable Body -->
+        <div class="add-modal-body" id="expense-forms-container">
+
+            <div class="expense-entry-form" data-index="1">
+                <div class="expense-entry-header">
+                    <h4>Expense #1</h4>
+                </div>
+
+                <!-- Row 1: Date & Purpose -->
+                <div class="add-form-row">
+                    <div class="add-form-field">
+                        <label>Date <span class="req">*</span></label>
+                        <input type="date" class="add-input e-date">
+                    </div>
+                    <div class="add-form-field">
+                        <label>Purpose <span class="req">*</span></label>
+                        <input type="text" class="add-input e-purpose" placeholder="e.g. Client Meeting">
+                    </div>
+                </div>
+
+                <!-- Row 2: From & To -->
+                <div class="add-form-row">
+                    <div class="add-form-field">
+                        <label>From <span class="req">*</span></label>
+                        <input type="text" class="add-input e-from" placeholder="Departure location">
+                    </div>
+                    <div class="add-form-field">
+                        <label>To <span class="req">*</span></label>
+                        <input type="text" class="add-input e-to" placeholder="Destination">
+                    </div>
+                </div>
+
+                <!-- Row 3: Mode, Distance, Amount -->
+                <div class="add-form-row add-form-row-3">
+                    <div class="add-form-field">
+                        <label>Mode of Transport <span class="req">*</span></label>
+                        <div class="custom-select e-mode-wrap" tabindex="0">
+                            <div class="select-trigger add-input" style="justify-content: space-between; display: flex;">
+                                <span class="select-value" style="color:#94a3b8;">Select mode</span>
+                                <i class="fa-solid fa-chevron-down" style="color:#cbd5e1;font-size:11px;"></i>
+                            </div>
+                            <div class="select-dropdown" style="z-index: 100;">
+                                <div class="select-item active" data-value="">Select mode</div>
+                                <div class="select-item" data-value="Car">Car</div>
+                                <div class="select-item" data-value="Cab">Cab</div>
+                                <div class="select-item" data-value="Bus">Bus</div>
+                                <div class="select-item" data-value="Train">Train</div>
+                                <div class="select-item" data-value="Flight">Flight</div>
+                                <div class="select-item" data-value="Bike">Bike</div>
+                                <div class="select-item" data-value="Other">Other</div>
+                            </div>
+                            <input type="hidden" class="e-mode" value="">
+                        </div>
+                    </div>
+                    <div class="add-form-field">
+                        <label>Distance (km) <span class="req">*</span></label>
+                        <input type="number" class="add-input e-distance" placeholder="Distance in km" min="0">
+                    </div>
+                    <div class="add-form-field">
+                        <label>Amount (₹) <span class="req">*</span></label>
+                        <input type="number" class="add-input e-amount" placeholder="0.00" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <!-- Row 4: Photos -->
+                <div class="add-photo-row">
+                    <div class="add-photo-field meter-photo-field">
+                        <label>Meter Start Photo <span class="req">*</span></label>
+                        <label class="file-drop-zone e-meter-start-lbl">
+                            <i class="fa-solid fa-camera"></i>
+                            <span class="e-meter-start-name">Choose file…</span>
+                            <input type="file" class="e-meter-start-input" accept="image/*" style="display:none;">
+                        </label>
+                    </div>
+                    <div class="add-photo-field meter-photo-field">
+                        <label>Meter End Photo <span class="req">*</span></label>
+                        <label class="file-drop-zone e-meter-end-lbl">
+                            <i class="fa-solid fa-camera"></i>
+                            <span class="e-meter-end-name">Choose file…</span>
+                            <input type="file" class="e-meter-end-input" accept="image/*" style="display:none;">
+                        </label>
+                    </div>
+                    <div class="add-photo-field bill-photo-field" style="display:none; grid-column: 1 / -1;">
+                        <label>Bill/Ticket Photo <span class="req">*</span></label>
+                        <label class="file-drop-zone e-bill-lbl">
+                            <i class="fa-solid fa-file-invoice"></i>
+                            <span class="e-bill-name">Choose file…</span>
+                            <input type="file" class="e-bill-input" accept="image/*,.pdf" style="display:none;">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Row 5: Notes -->
+                <div class="add-form-field" style="margin-top:4px;">
+                    <label>Notes</label>
+                    <textarea class="add-input add-textarea e-notes" placeholder="Additional details (optional)"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="add-modal-footer">
+            <button class="btn btn-ghost" id="add-modal-close-btn">
+                <i class="fa-solid fa-xmark"></i> Close
+            </button>
+            <div style="display:flex;gap:10px;">
+                <button class="btn btn-orange" id="btn-add-to-list">
+                    <i class="fa-solid fa-plus"></i> Add Expense
+                </button>
+                <button class="btn btn-green" id="btn-save-all-expenses">
+                    <i class="fa-solid fa-floppy-disk"></i> Save All Expenses
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

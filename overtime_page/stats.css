@@ -1,0 +1,69 @@
+/* =====================================================
+   MODERN STATS GRID
+   ===================================================== */
+.modern-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default desktop: 3 columns */
+    gap: 16px;
+}
+
+.modern-card {
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+}
+
+.blue-card { background: #eff6ff; border-color: #dbeafe; }
+.blue-card .stat-label { color: #3b82f6; }
+.blue-card .modern-icon { background: #3b82f6; color: white; }
+
+.green-card { background: #f0fdf4; border-color: #dcfce7; }
+.green-card .stat-label { color: #22c55e; }
+.green-card .modern-icon { background: #22c55e; color: white; }
+
+.yellow-card { background: #fffbeb; border-color: #fef3c7; }
+.yellow-card .stat-label { color: #f59e0b; }
+.yellow-card .modern-icon { background: #f59e0b; color: white; }
+
+.red-card { background: #fef2f2; border-color: #fee2e2; }
+.red-card .stat-label { color: #ef4444; }
+.red-card .modern-icon { background: #ef4444; color: white; }
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-card .stat-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.modern-card .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.modern-card .stat-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.modern-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+}
