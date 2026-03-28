@@ -1,0 +1,35 @@
+[
+    {
+        "id": "69b93f80428e2",
+        "date": "2026-03-17 to 2026-03-21",
+        "leaveType": "Casual Leave",
+        "duration": "5.00",
+        "status": "Pending",
+        "managerStatus": "No Action Taken",
+        "reason": "test ",
+        "statusClass": "status-gray",
+        "managerStatusClass": "status-yellow"
+    },
+    {
+        "id": "69b924b847ee8",
+        "date": "2026-03-13",
+        "leaveType": "Short Leave",
+        "duration": "0.25",
+        "status": "Pending",
+        "managerStatus": "No Action Taken",
+        "reason": "Due to some personal reasons need short leave",
+        "statusClass": "status-gray",
+        "managerStatusClass": "status-yellow"
+    },
+    {
+        "id": "69b924b848322",
+        "date": "2026-03-10",
+        "leaveType": "Unpaid Leave",
+        "duration": "1.00",
+        "status": "Approved",
+        "managerStatus": "Approved",
+        "reason": "Brother's wedding",
+        "statusClass": "status-green",
+        "managerStatusClass": "status-green"
+    }
+]
